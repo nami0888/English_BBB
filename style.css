@@ -1,2 +1,345 @@
 @charset "UTF-8";
-:-moz-suppressed
+
+html {
+  font-size: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  color: #333;
+  font-family: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+/* 
+ヘッダー
+============================================= */
+header {
+  margin: 40px 0 0 50px;
+  width: 100px;
+}
+
+/*
+ハンバーガ―メニュー
+*/
+.hamburger {
+  width: 100px;
+  height: 100px;
+  background-color: #ff2a2a;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 30;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+/* ハンバーガーメニューの線の設定（メニューが閉じている時） */
+.hamburger span {
+  width: 50px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  left: 25px;
+  transition: 0.3s ease-in-out;
+}
+
+/* 1本目の線の位置を設定 */
+.hamburger span:nth-child(1) {
+  top: 36px;
+}
+
+/* 2本目の線の位置を設定 */
+.hamburger span:nth-child(2) {
+  top: 50px;
+}
+
+/* 3本目の線の位置を設定 */
+.hamburger span:nth-child(3) {
+  top: 64px;
+}
+
+/*
+  ハンバーガーメニューの線の設定（メニューが開いている時）
+  1本目の線を-45度回転
+  */
+.hamburger.active span:nth-child(1) {
+  top: 47px;
+  left: 25px;
+  background: #fff;
+  transform: rotate(-45deg);
+}
+
+/* 2本目と3本目は重ねて45度回転 */
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 47px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+/*
+  メニューの設定
+  最初は閉じている状態なので、「opacity: 0;」「visibility: hidden;」
+  で要素を非表示にしておく
+  */
+#navi {
+  width: 100%;
+  height: 100vh;
+  background-color: #ff2a2a;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  visibility: hidden;
+}
+
+/*
+  ハンバーガーメニューがクリックされた際に、jQueryで#naviにactiveクラスを追加して、
+  メニューを表示させる。
+  */
+#navi.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#navi .logo {
+  width: 100px;
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+
+#navi .menu {
+  margin: 80px 0 40px 0;
+}
+
+#navi .menu li {
+  margin-bottom: 20px;
+}
+
+#navi .menu a {
+  color: #fff;
+  font-weight: bold;
+}
+
+#navi .btn {
+  width: 250px;
+  border: solid 1px #fff;
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  padding: 15px 0;
+  margin: 0 auto;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+/* ボタンの右と下の線は疑似要素で設定 */
+#navi .btn::after {
+  content: "　";
+  width: 250px;
+  border-right: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+  padding: 15px 0;
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+}
+
+#navi .btn:hover {
+  background-color: #fff;
+  color: #ff2a2a;
+}
+
+/* 
+メイン
+============================================= */
+#mainvisual {
+  height: 720px;
+  position: relative;
+  margin-bottom: 120px;
+}
+
+#mainvisual .text {
+  position: absolute;
+  top: 280px;
+  left: 10%;
+  z-index: 10;
+}
+
+#mainvisual .text .title {
+  font-size: 2.856rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 0 4px 6px #fff;
+}
+
+ #mainvisual .text .btn {
+  background-color: #FF0033;
+  font-size: 1.5rem;
+  border-bottom: 6px solid #9a0413;
+  border-radius: 10px;
+  color:#fff;
+  display: block;
+  padding: 15px 35px;
+  text-align: center;
+  transition: 0.3s;
+  position: relative;
+}
+
+
+#mainvisual .text .btn::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+}
+
+
+
+
+#mainvisual .fade li {
+  width: 75%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* 最初は3枚の画像を非表示にしておく */
+  opacity: 0;
+  /*
+    アニメーションを実行
+    fade：下で定義している「@keyframes fade」を実行
+    15s：「@keyframes fade」の処理を15秒かけて実行
+    infinite：アニメーションの処理を無限に繰り返す
+    */
+  animation: fade 15s infinite;
+}
+
+/*
+  1枚目の画像のアニメーション実行タイミングを設定
+  「animation-delay: 0s;」ですぐに実行
+  */
+#mainvisual .fade li:nth-child(1) {
+  animation-delay: 0s;
+}
+
+/*
+  2枚目の画像のアニメーション実行タイミングを設定
+  「animation-delay: 5s;」で5秒後に実行
+  */
+#mainvisual .fade li:nth-child(2) {
+  animation-delay: 5s;
+}
+
+/*
+  3枚目の画像のアニメーション実行タイミングを設定
+  「animation-delay: 10s;」で10秒後に実行
+  */
+#mainvisual .fade li:nth-child(3) {
+  animation-delay: 10s;
+}
+
+#mainvisual .fade li img {
+  width: 100%;
+  height: 720px;
+  object-fit: cover;
+}
+
+/*
+  「box-shadow」で画像のまわりをぼかす
+  */
+#mainvisual .fade li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0px 0px 20px 20px #fff;
+}
+
+/*
+  アニメーション処理
+  上の「animation」で15sを指定しているので下記の処理を15秒かけて実行
+  0%が0秒を表し、100%が15秒後を表す。
+  
+  0%の「opacity: 0;」で非表示の状態からスタートし、
+  15%になるまでの間に少しづつ画像を表示（フェードイン）させる。
+  そこから30%の時点までは画像を表示させたままの状態を維持し、
+  45%の時点に向けて画像を非表示（フェードアウト）する。
+  そこから100%まで非表示の状態を維持する。
+  */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 
+BBBが選ばれる理由
+============================================= */
+#reason {
+  margin-bottom: 120px;
+}
+
+#reason .bg {
+  background-color: #ff2a2a;
+  padding: 80px 0;
+}
+
+#reason .slide p img {
+  height: 60px;
+}
+
+#reason .slide {
+  width: 50%;
+  padding: 70px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#reason .slide-right {
+  animation: slide-right 0.5s ease-out 0s 1 forwards;
+}
