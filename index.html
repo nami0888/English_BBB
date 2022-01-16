@@ -8,9 +8,8 @@
   <link rel="shortcut icon" href="images/favicon.png">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="js/jquery.inview.min.js"></script>
+  <script src="jquery.inview.min.js"></script>
   <script src="main.js"></script>
 </head>
 
@@ -19,24 +18,21 @@
     <h1>
       <a href=""><img src="images/logo-r.svg" alt="BBB英会話教室"></a>
     </h1>
-    <div>
-      <nav id="navi">
-        <img class="logo" src="images/logo-w.svg" alt="BBB英会話スクール">
-        <ul class="menu">
-          <li><a href="#reason">BBBが選ばれる理由</a></li>
-          <li><a href="#voice">受講生の声</a></li>
-          <li><a href="#summary">スクールの概要</a></li>
-        </ul>
-        <a class="btn" href="#">無料体験に申し込む</a>
-      </nav>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <nav id="navi">
+      <img class="logo" src="images/logo-w.svg" alt="BBB英会話スクール">
+      <ul class="menu">
+        <li><a href="#reason">BBBが選ばれる理由</a></li>
+        <li><a href="#voice">受講生の声</a></li>
+        <li><a href="#summary">スクールの概要</a></li>
+      </ul>
+      <a class="btn" href="#">無料体験に申し込む</a>
+    </nav>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
-
-
 
   <main>
     <div id="mainvisual">
@@ -51,7 +47,7 @@
       </ul>
     </div>
 
-    <section id="reason"　ｃ>　
+    <section id="reason">
       <h2>BBBが選ばれる理由</h2>
       <div class="bg">
         <div class="slide inview-slide-left">
@@ -71,58 +67,67 @@
       </div>
     </section>
 
-    <section class="wrapper">
+    <section id="voice" class="wrapper">
       <h2>受講生の声</h2>
-      <div class="">
-        <p><img src="images/icon-student1.png" alt=""></p>
-        <div class="">
-          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+      <div class="item-left inview-balloon">
+        <div class="student">
+          <img src="images/icon-student1.png" alt="">
+          <p class="name">○○○さん<br>大学生</p>
+        </div>
+     
+        <div class="balloon-text">
+          <p>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </p>
         </div>
       </div>
-      <div class="">
-        <p><img src="images/icon-student1.png" alt=""></p>
-        <div class="">
-          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+      <div class="item-right inview-balloon">
+        <div class="balloon-text">
+          <p>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </p>
+        </div>
+        <div class="student">
+          <img src="images/icon-student2.png" alt="">
+          <p class="name">○○○さん<br>会社員</p>
         </div>
       </div>
-      <div class="">
-        <p><img src="images/icon-student1.png" alt=""></p>
-        <div class="">
-          <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+
+
+
+      <section class="wrapper">
+        <h2>スクールの概要</h2>
+        <div>
+          <ul>
+            <li>
+              <h3>レッスン内容<br><span>LESSON</span></h3>
+              <p>テキストテキストテキスト</p>
+            </li>
+            <li>
+              <h3>料金プラン<br><span>PRICE</span></h3>
+              <p>テキストテキストテキスト</p>
+            </li>
+            <li>
+              <h3>講師のご紹介<br><span>TEACHER</span></h3>
+              <p>テキストテキストテキスト</p>
+            </li>
+            <li>
+              <h3>BBBのQ&A<br><span>Q&A</span></h3>
+              <p>テキストテキストテキスト</p>Ï
+            </li>
+          </ul>
         </div>
+      </section>
+      <div class="wrapper">
+        <p>まずは無料で、BBBの英会話を試してみませんか？</p>
+        <p>今なら初月のレッスンを特別価格で受講できる割引クーポンをプレゼント！</p>
+        <a class="btn" href="#">無料体験に申し込む</a>
       </div>
-    </section>
-    <section class="wrapper">
-      <h2>スクールの概要</h2>
-      <div>
-        <ul>
-          <li>
-            <h3>レッスン内容<br><span>LESSON</span></h3>
-            <p>テキストテキストテキスト</p>
-          </li>
-          <li>
-            <h3>料金プラン<br><span>PRICE</span></h3>
-            <p>テキストテキストテキスト</p>
-          </li>
-          <li>
-            <h3>講師のご紹介<br><span>TEACHER</span></h3>
-            <p>テキストテキストテキスト</p>
-          </li>
-          <li>
-            <h3>BBBのQ&A<br><span>Q&A</span></h3>
-            <p>テキストテキストテキスト</p>Ï
-          </li>
-        </ul>
-      </div>
-    </section>
-    <div class="wrapper">
-      <p>まずは無料で、BBBの英会話を試してみませんか？</p>
-      <p>今なら初月のレッスンを特別価格で受講できる割引クーポンをプレゼント！</p>
-      <a class="btn" href="#">無料体験に申し込む</a>
-    </div>
   </main>
   <footer id="footer">
     <ul class="inner wrapper">
