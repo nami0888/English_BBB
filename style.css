@@ -394,7 +394,10 @@ BBBが選ばれる理由
   justify-content: flex-start;
 }
 
-
+#voice .item-right{
+  justify-content: flex-end
+  ;
+}
 
 
 #voice .student img {
@@ -403,10 +406,12 @@ BBBが選ばれる理由
   border-radius: 50%;
   margin-bottom: 10px;
 }
-#voice .student .name{
+
+#voice .student .name {
   font-size: 0.75rem;
   text-align: center;
 }
+
 #voice .item-left .balloon-text,
 #voice .item-right .balloon-text {
   width: 60%;
@@ -417,15 +422,80 @@ BBBが選ばれる理由
   padding: 20px;
   position: relative;
 }
+
 #voice .item-left .balloon-text {
   margin-left: 25px;
 }
-#voice .item-left .balloon-text::before{
-  content: "";
+
+#voice .item-left .balloon-text::before {
+  content: '';
   position: absolute;
   top: 60%;
   left: 0;
   margin-left: -30px;
   border: 15px solid transparent;
   border-right: 15px solid #e9f1fb;
+}
+
+#voice .item-right .balloon-text {
+  margin-right: 25px;
+}
+
+#voice .item-right .balloon-text::after {
+  content: '';
+  position: absolute;
+  top: 60%;
+  right: 0;
+  margin-right: -30px;
+  border: 15px solid transparent;
+  border-left: 15px solid #e9f1fb;
+}
+
+/*
+スクールの概要
+====================================================*/
+#summary {
+  background: url(images/bg.gif) repeat;
+  background-size:contain; 
+  animation: fall 10s infinite linear;
+  padding: 60px 0;
+  margin-bottom: 120px;
+}
+
+@keyframes fall {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -700px 700px;
+  }
+}
+
+#summary ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+
+#summary li {
+  width: 47%;
+  padding: 60px;
+  background-color: #fff;
+  margin-bottom: 32px;
+ 
+  border-radius: 20px;
+}
+#summary  h3{
+  display: block;
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#summary .second_title{
+  font-size: 1.125rem;
 }
