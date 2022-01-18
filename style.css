@@ -381,12 +381,16 @@ BBBが選ばれる理由
 /*
 受講生の声
 ====================================================*/
+#voice {
+  margin-bottom: 120px;
+}
 #voice .item-left,
 #voice .item-right {
 
   display: flex;
   align-items: flex-start;
   border-radius: 15px;
+  opacity: 0;
   margin-bottom: 60px;
 }
 
@@ -450,6 +454,21 @@ BBBが選ばれる理由
   border: 15px solid transparent;
   border-left: 15px solid #e9f1fb;
 }
+#voice .balloon {
+  animation: balloon 0.5s ease-out 0s 1 forwards;
+}
+@keyframes balloon {
+  0%{
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+}
+
 
 /*
 スクールの概要
@@ -498,4 +517,74 @@ BBBが選ばれる理由
 
 #summary .second_title{
   font-size: 1.125rem;
+}
+/* Entry
+====================================================*/
+#entry {
+ margin-bottom: 120px;
+  text-align: center;
+}
+
+
+#entry .title{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+
+}
+#entry .catchphrase {
+  font-size: 1.125rem;
+  margin-bottom: 40px;
+}
+#entry .btn{
+  background-color: #FF2A2A;
+  color: #fff;
+  padding: 15px;
+  display: block;
+  font-size: 1.75rem;
+  border-radius: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#entry .btn:hover {
+  background-color: #fff;
+  border: solid 3px #ff2a2a;
+
+  color: #ff2a2a;
+}
+/* フッター
+====================================================*/
+
+footer{
+  background-color: #E8E8E8;
+  padding: 60px 0 20px 0;
+}
+#footer .inner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+#footer .title{
+  font-weight: bold;
+}
+#footer .menu{
+  padding: 10px 0 0 10px;
+}
+#footer .inner .menu li {
+  margin-bottom: 3px;
+  line-height: 1.3;
+
+}
+#footer .inner > li {
+  width: 25%;
+  
+}
+#footer a {
+  font-size: 0.875rem;
+  transition: 0.3s;
+}
+#footer .copyright{
+  font-size: 0.625em;
+  text-align: center;
 }
